@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+int main() {
+    int a[20], n, i, pos, item;
+
+    printf("Enter the number of elements: ");
+    scanf("%d", &n);
+
+    printf("Enter the array elements:\n");
+    for(i = 0; i < n; i++) {
+        scanf("%d", &a[i]);
+    }
+
+    printf("Enter the position to modify: ");
+    scanf("%d", &pos);
+
+    printf("Enter the new value: ");
+    scanf("%d", &item);
+
+    a[pos - 1] = item;
+
+    printf("Array after modification:\n");
+    for(i = 0; i < n; i++) {
+        printf("%d ", a[i]);
+    }
+
+    return 0;
+}
