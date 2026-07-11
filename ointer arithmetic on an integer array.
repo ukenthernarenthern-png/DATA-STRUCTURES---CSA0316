@@ -1,0 +1,38 @@
+#include <stdio.h>
+
+int main()
+{
+    int arr[5] = {10, 20, 30, 40, 50};
+    int *ptr;
+    int i;
+
+    ptr = arr;
+
+    printf("Displaying elements using array indexing:\n");
+    for(i = 0; i < 5; i++)
+    {
+        printf("arr[%d] = %d\n", i, arr[i]);
+    }
+
+    printf("\nDisplaying elements using pointer notation:\n");
+    for(i = 0; i < 5; i++)
+    {
+        printf("*(ptr + %d) = %d\n", i, *(ptr + i));
+    }
+
+    printf("\nAddresses of array elements:\n");
+    for(i = 0; i < 5; i++)
+    {
+        printf("&arr[%d] = %p\n", i, (void *)&arr[i]);
+    }
+
+    printf("\nAddress difference between consecutive elements:\n");
+    for(i = 0; i < 4; i++)
+    {
+        printf("Difference between arr[%d] and arr[%d] = %ld bytes\n",
+               i, i + 1,
+               (char *)&arr[i + 1] - (char *)&arr[i]);
+    }
+
+    return 0;
+}
